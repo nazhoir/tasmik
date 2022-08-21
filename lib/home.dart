@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qiroah/awaliyah/awaliyah.dart';
 import 'package:qiroah/ibtidaiyyah/ibtidaiyyah.dart';
+import 'package:qiroah/ula/ula.dart';
+import 'package:qiroah/ulya/ulya.dart';
+import 'package:qiroah/widgets/appbat_button.dart';
+import 'package:qiroah/widgets/level_card.dart';
+import 'package:qiroah/wustho/wustho.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -30,319 +35,113 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 24),
-            child: Icon(
+        actions: [
+          AppbarButton(
+            icon: const Icon(
               CupertinoIcons.text_alignright,
               size: 24,
             ),
+            onTap: () {},
           ),
         ],
       ),
-      body: ListView(
-        children: [
-          Container(
-            color: Colors.white,
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: 290,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Selamat Datang Kembali",
-                        style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 17,
-                            color: Color.fromRGBO(77, 121, 136, 1),
-                          ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            children: [
+              Container(
+                margin: const EdgeInsets.only(bottom: 28),
+                width: 290,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Selamat Datang Kembali",
+                      style: GoogleFonts.inter(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 17,
+                          color: Color.fromRGBO(77, 121, 136, 1),
                         ),
-                      ),
-                      Text(
-                        "Belajar Apalagi Hari ini?",
-                        style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 28,
-                            color: Color.fromRGBO(17, 58, 77, 1),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Ibtidaiyyah(),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 22),
-                    padding: const EdgeInsets.all(30),
-                    decoration: const BoxDecoration(
-                      color: Color.fromRGBO(17, 58, 77, 1),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(18),
                       ),
                     ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Image.asset(
-                              "images/icon1-putih.png",
-                              height: 20,
-                            ),
-                            const SizedBox(
-                              width: 8,
-                            ),
-                            Text(
-                              "Ibtidaiyyah",
-                              style: GoogleFonts.inter(
-                                textStyle: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 17,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ],
+                    Text(
+                      "Belajar Apalagi Hari ini?",
+                      style: GoogleFonts.inter(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 28,
+                          color: Color.fromRGBO(17, 58, 77, 1),
                         ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "Pengertian Ilmu Tajwid dan sejarah perkembangannya.",
-                          style: GoogleFonts.inter(
-                            textStyle: const TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
-                              color: Colors.white,
-                            ),
-                          ),
-                        )
-                      ],
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Awaliyah(),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 22),
-                    padding: const EdgeInsets.all(30),
-                    decoration: const BoxDecoration(
-                      color: Color.fromRGBO(17, 58, 77, 1),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(18),
-                      ),
+              ),
+              LevelCard(
+                level: "Ibtidaiyyah",
+                title: "Pengertian Ilmu Tajwid dan Sejarah Perkembangannya",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Ibtidaiyyah(),
                     ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Image.asset(
-                              "images/icon1-putih.png",
-                              height: 20,
-                            ),
-                            const SizedBox(
-                              width: 8,
-                            ),
-                            Text(
-                              "Awaliyah",
-                              style: GoogleFonts.inter(
-                                textStyle: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 17,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "Huruf Hijaiyyah, Makharijul Huruf dan Sifatul huruf",
-                          style: GoogleFonts.inter(
-                            textStyle: const TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17,
-                              color: Colors.white,
-                            ),
-                          ),
-                        )
-                      ],
+                  );
+                },
+              ),
+              LevelCard(
+                level: "Awwaliyah",
+                title: "Huruf Hijaiyyah, Makharijul Huruf dan Sifatul huruf",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Awaliyah(),
                     ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 22),
-                  padding: const EdgeInsets.all(30),
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(17, 58, 77, 1),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(18),
+                  );
+                },
+              ),
+              LevelCard(
+                level: "Ula",
+                title: "Nun Mati & Tanwin, Mim Mati dan Hukum Mad",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Ula(),
                     ),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Image.asset(
-                            "images/icon1-putih.png",
-                            height: 20,
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            "Ula",
-                            style: GoogleFonts.inter(
-                              textStyle: const TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 17,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Nun Mati & Tanwin, Mim Mati dan Hukum Mad",
-                        style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 17,
-                            color: Colors.white,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 22),
-                  padding: const EdgeInsets.all(30),
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(17, 58, 77, 1),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(18),
+                  );
+                },
+              ),
+              LevelCard(
+                level: "Wustho",
+                title: "Cara Baca, Alif Lam Ta'rif dan Idgham",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Wustho(),
                     ),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Image.asset(
-                            "images/icon1-putih.png",
-                            height: 20,
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            "Wustho",
-                            style: GoogleFonts.inter(
-                              textStyle: const TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 17,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Cara Baca, Alif Lam Ta’rif dan Idgham ",
-                        style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 17,
-                            color: Colors.white,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 22),
-                  padding: const EdgeInsets.all(30),
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(17, 58, 77, 1),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(18),
+                  );
+                },
+              ),
+              LevelCard(
+                level: "Ulya",
+                title: "Waqaf, Ibtida' dan Bacaan khusus didalam al-Qur'an",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Ulya(),
                     ),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Image.asset(
-                            "images/icon1-putih.png",
-                            height: 20,
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            "Ulya",
-                            style: GoogleFonts.inter(
-                              textStyle: const TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 17,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Waqaf, Ibtida’ dan Bacaan khusus didalam al-Qur’an",
-                        style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 17,
-                            color: Colors.white,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
+                  );
+                },
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

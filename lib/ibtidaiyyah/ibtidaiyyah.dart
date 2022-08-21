@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:qiroah/ibtidaiyyah/exam_ibtidaiyyah.dart';
+import 'package:qiroah/widgets/conten_detail.dart';
+import 'package:qiroah/widgets/heading_detail_content.dart';
+
+import '../widgets/appbat_button.dart';
 
 class Ibtidaiyyah extends StatefulWidget {
   const Ibtidaiyyah({Key? key}) : super(key: key);
@@ -29,78 +34,47 @@ class _IbtidaiyyahState extends State<Ibtidaiyyah> {
             ),
           ),
         ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 24),
-            child: Icon(
+        actions: [
+          AppbarButton(
+            icon: const Icon(
               CupertinoIcons.textformat_alt,
               size: 24,
             ),
+            onTap: () {},
           ),
         ],
       ),
+      backgroundColor: Colors.white,
       body: ListView(
         children: [
-          Container(
-            color: Colors.white,
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: 290,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Image.asset(
-                            "images/icon1.png",
-                            height: 20,
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            "Ibtidaiyyah",
-                            style: GoogleFonts.inter(
-                              textStyle: const TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 17,
-                                color: Color.fromRGBO(77, 121, 136, 1),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        "Pengertian Ilmu Tajwid dan Sejarah Perkembangannya",
-                        style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 28,
-                            color: Color.fromRGBO(17, 58, 77, 1),
-                          ),
-                        ),
-                      ),
-                    ],
+          const HeadingDetailContent(
+            level: "Ibtidaiyyah",
+            title: "Pengertian Ilmu Tajwid dan Sejarah Perkembangannya",
+          ),
+          ContentDetail(
+            content: [
+              Text(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, sit accumsan odio consequat blandit. Non venenatis egestas ac, semper sodales sed rhoncus, neque. Ultricies nullam pharetra, nibh auctor dignissim magna sollicitudin. Aliquet tincidunt ridiculus bibendum luctus lobortis aliquam. \n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, sit accumsan odio consequat blandit. Non venenatis egestas ac, semper sodales sed rhoncus, neque. Ultricies nullam pharetra, nibh auctor dignissim magna sollicitudin. Aliquet tincidunt ridiculus bibendum luctus lobortis aliquam. \n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, sit accumsan odio consequat blandit. Non venenatis egestas ac, semper sodales sed rhoncus, neque. Ultricies nullam pharetra, nibh auctor dignissim magna sollicitudin. Aliquet tincidunt ridiculus bibendum luctus lobortis aliquam. \n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, sit accumsan odio consequat blandit. Non venenatis egestas ac, semper sodales sed rhoncus, neque. Ultricies nullam pharetra, nibh auctor dignissim magna sollicitudin. Aliquet tincidunt ridiculus bibendum luctus lobortis aliquam.",
+                style: GoogleFonts.inter(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 17,
+                    color: Color.fromRGBO(17, 58, 77, 1),
                   ),
                 ),
-                const SizedBox(
-                  height: 38,
+              ),
+            ],
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ExamIbtidaiyyah(),
                 ),
-                Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, sit accumsan odio consequat blandit. Non venenatis egestas ac, semper sodales sed rhoncus, neque. Ultricies nullam pharetra, nibh auctor dignissim magna sollicitudin. Aliquet tincidunt ridiculus bibendum luctus lobortis aliquam. \n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, sit accumsan odio consequat blandit. Non venenatis egestas ac, semper sodales sed rhoncus, neque. Ultricies nullam pharetra, nibh auctor dignissim magna sollicitudin. Aliquet tincidunt ridiculus bibendum luctus lobortis aliquam. \n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, sit accumsan odio consequat blandit. Non venenatis egestas ac, semper sodales sed rhoncus, neque. Ultricies nullam pharetra, nibh auctor dignissim magna sollicitudin. Aliquet tincidunt ridiculus bibendum luctus lobortis aliquam. \n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, sit accumsan odio consequat blandit. Non venenatis egestas ac, semper sodales sed rhoncus, neque. Ultricies nullam pharetra, nibh auctor dignissim magna sollicitudin. Aliquet tincidunt ridiculus bibendum luctus lobortis aliquam.",
-                  style: GoogleFonts.inter(
-                    textStyle: const TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 17,
-                      color: Color.fromRGBO(17, 58, 77, 1),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              );
+            },
+            child: const Text("Taqyim"),
           ),
         ],
       ),
