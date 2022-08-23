@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:qiroah/awaliyah/awaliyah.dart';
-import 'package:qiroah/ibtidaiyyah/ibtidaiyyah.dart';
-import 'package:qiroah/ula/ula.dart';
-import 'package:qiroah/ulya/ulya.dart';
-import 'package:qiroah/widgets/appbat_button.dart';
-import 'package:qiroah/widgets/level_card.dart';
-import 'package:qiroah/wustho/wustho.dart';
+import 'package:tasmik/awaliyah/awaliyah.dart';
+import 'package:tasmik/ibtidaiyyah/ibtidaiyyah.dart';
+import 'package:tasmik/settings/settings_view.dart';
+import 'package:tasmik/ula/ula.dart';
+import 'package:tasmik/ulya/ulya.dart';
+import 'package:tasmik/widgets/appbat_button.dart';
+import 'package:tasmik/widgets/level_card.dart';
+import 'package:tasmik/wustho/wustho.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class _HomeState extends State<Home> {
         iconTheme: const IconThemeData(color: Color.fromRGBO(17, 58, 77, 1)),
         backgroundColor: Colors.white,
         title: Text(
-          "Qiroah",
+          "Tasmik",
           style: GoogleFonts.inter(
             textStyle: const TextStyle(
               fontWeight: FontWeight.bold,
@@ -41,7 +42,14 @@ class _HomeState extends State<Home> {
               CupertinoIcons.text_alignright,
               size: 24,
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Settings(),
+                ),
+              );
+            },
           ),
         ],
       ),

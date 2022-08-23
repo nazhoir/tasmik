@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:qiroah/ibtidaiyyah/exam_ibtidaiyyah.dart';
-import 'package:qiroah/widgets/conten_detail.dart';
-import 'package:qiroah/widgets/heading_detail_content.dart';
+import 'package:tasmik/ibtidaiyyah/exam_ibtidaiyyah.dart';
+import 'package:tasmik/widgets/conten_detail.dart';
+import 'package:tasmik/widgets/heading_detail_content.dart';
 
 import '../widgets/appbat_button.dart';
 
@@ -25,7 +25,7 @@ class _IbtidaiyyahState extends State<Ibtidaiyyah> {
         backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
-          "Qiroah",
+          "Tasmik",
           style: GoogleFonts.inter(
             textStyle: const TextStyle(
               fontWeight: FontWeight.bold,

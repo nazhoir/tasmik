@@ -20,7 +20,7 @@ class _AwaliyahState extends State<Awaliyah> {
         backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
-          "Qiroah",
+          "Tasmik",
           style: GoogleFonts.inter(
             textStyle: const TextStyle(
               fontWeight: FontWeight.bold,
