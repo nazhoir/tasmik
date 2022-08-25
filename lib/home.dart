@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tasmik/constant.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tasmik/level/ibtidaiyyah/ibtidaiyyah.dart';
 import 'package:tasmik/models/ibtidaiyyah_model.dart';
 
 import 'package:tasmik/widgets/appbar_custom.dart';
@@ -34,6 +33,10 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(24.0),
             child: Column(
               children: [
+                const HeadingContent(
+                  subtitle: "Selamat Datang Kembali",
+                  title: "Belajar Apalagi Hari ini?",
+                ),
                 Container(
                   margin: const EdgeInsets.only(bottom: 28),
                   width: MediaQuery.of(context).size.width,

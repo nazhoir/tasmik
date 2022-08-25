@@ -5,21 +5,4 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
-import 'package:tasmik/main.dart';
-import 'package:tasmik/models/awwaliyah_model.dart';
-
-void main() {
-  var index;
-  final TajwidList tajwidlist = tajwidList[index];
-
-  int expansionTileLength = tajwidList.length;
-  int expansionTileContentLength =
-      tajwidlist.listisi != null ? tajwidlist.listisi!.length : 0;
-
-  print(
-    expansionTileLength,
-  );
-}
+void main() {}

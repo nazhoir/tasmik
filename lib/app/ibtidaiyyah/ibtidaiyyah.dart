@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tasmik/level/ibtidaiyyah/exam_ibtidaiyyah.dart';
+import 'package:tasmik/app/ibtidaiyyah/exam_ibtidaiyyah.dart';
 import 'package:tasmik/models/ibtidaiyyah_model.dart';
 import 'package:tasmik/widgets/appbar_custom.dart';
 import 'package:tasmik/widgets/content_detail.dart';
-import 'package:tasmik/widgets/heading_detail_content.dart';
 
 class Ibtidaiyyah extends StatefulWidget {
   const Ibtidaiyyah({Key? key}) : super(key: key);
@@ -31,7 +30,7 @@ class _IbtidaiyyahState extends State<Ibtidaiyyah> {
       backgroundColor: Colors.white,
       body: ListView(
         children: [
-          const HeadingDetailContent(
+          const HeadingContent(
             level: "Ibtidaiyyah",
             title: "Pengertian Ilmu Tajwid dan Sejarah Perkembangannya",
           ),
