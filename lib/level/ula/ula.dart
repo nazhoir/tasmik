@@ -10,6 +10,6 @@ class Ula extends StatefulWidget {
 class _UlaState extends State<Ula> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }

@@ -10,6 +10,6 @@ class Wustho extends StatefulWidget {
 class _WusthoState extends State<Wustho> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }

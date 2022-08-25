@@ -1,27 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tasmik/constant.dart';
 
 class LevelCard extends StatelessWidget {
   const LevelCard({
     Key? key,
     required this.level,
     required this.title,
-    required this.onTap,
+    required this.destination,
   }) : super(key: key);
+
   final String level;
   final String title;
-  final VoidCallback onTap;
+  final Widget destination;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => destination,
+          ),
+        );
+      },
       child: Container(
         width: MediaQuery.of(context).size.width,
         margin: const EdgeInsets.only(top: 22),
         padding: const EdgeInsets.all(30),
         decoration: const BoxDecoration(
-          color: Color.fromRGBO(17, 58, 77, 1),
+          color: primaryColor,
           borderRadius: BorderRadius.all(
             Radius.circular(18),
           ),
@@ -54,7 +63,7 @@ class LevelCard extends StatelessWidget {
               height: 10,
             ),
             SizedBox(
-              width: 200,
+              width: MediaQuery.of(context).size.width - 30,
               child: Text(
                 title,
                 style: GoogleFonts.inter(

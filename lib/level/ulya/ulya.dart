@@ -10,6 +10,6 @@ class Ulya extends StatefulWidget {
 class _UlyaState extends State<Ulya> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }

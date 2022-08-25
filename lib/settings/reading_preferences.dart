@@ -30,7 +30,7 @@ class RreadingPreferencesState extends State<ReadingPreferences> {
           ),
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 240, 240, 240),
+      backgroundColor: const Color.fromARGB(255, 240, 240, 240),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(24),

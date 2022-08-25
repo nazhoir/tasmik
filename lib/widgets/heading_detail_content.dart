@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tasmik/constant.dart';
 
 class HeadingDetailContent extends StatelessWidget {
   const HeadingDetailContent(
@@ -32,7 +33,7 @@ class HeadingDetailContent extends StatelessWidget {
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 17,
-                    color: Color.fromRGBO(77, 121, 136, 1),
+                    color: primaryColor,
                   ),
                 ),
               ),
@@ -44,7 +45,7 @@ class HeadingDetailContent extends StatelessWidget {
               textStyle: const TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 28,
-                color: Color.fromRGBO(17, 58, 77, 1),
+                color: primaryColor,
               ),
             ),
           ),

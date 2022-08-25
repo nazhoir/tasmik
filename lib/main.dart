@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:tasmik/constant.dart';
 import 'package:tasmik/home.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await initialization(null);
+
   runApp(const MyApp());
+}
+
+Future initialization(BuildContext? context) async {
+  await Future.delayed(const Duration(microseconds: 30));
 }
 
 class MyApp extends StatelessWidget {
@@ -10,10 +19,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: primaryColor,
+        backgroundColor: aksen2Color,
+      ),
       title: 'Tasmik',
-      home: Home(),
+      home: const Home(),
     );
   }
 }

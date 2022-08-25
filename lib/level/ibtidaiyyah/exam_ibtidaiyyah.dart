@@ -16,7 +16,7 @@ class _ExamIbtidaiyyahState extends State<ExamIbtidaiyyah> {
         title: const Text("Taqyim"),
       ),
       backgroundColor: Colors.white,
-      body: ExamChoice(label: "A", content: "Apa itu", value: true),
+      body: const ExamChoice(label: "A", content: "Apa itu", value: true),
     );
   }
 }
