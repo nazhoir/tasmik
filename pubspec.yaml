@@ -20,6 +20,7 @@ dependencies:
   flutter_markdown: ^0.6.10+4
   
   url_launcher: ^6.1.5
+  flutter_launcher_icons: ^0.10.0
 
   
   
@@ -34,6 +35,19 @@ dev_dependencies:
 flutter_native_splash:
   color: "#E9F1F4"
   image: images/tasmiklogo.png
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/icon.png"
+  web:
+    generate: true
+    image_path: "images/icon.png"
+    background_color: "#E9F1F4"
+    theme_color: "#E9F1F4"
+  windows:
+    generate: true
+    image_path: "images/icon.png"
 
 flutter:
   uses-material-design: true
