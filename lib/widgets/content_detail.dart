@@ -161,6 +161,7 @@ class ContentMark extends StatelessWidget {
       shrinkWrap: true,
       selectable: true,
       styleSheet: MarkdownStyleSheet(
+        blockSpacing: 20,
         textAlign: WrapAlignment.spaceBetween,
         tableHeadAlign: TextAlign.center,
         tableBorder: TableBorder(
@@ -216,12 +217,20 @@ class ContentMark extends StatelessWidget {
         ),
         p: GoogleFonts.inter(
           textStyle: const TextStyle(
-            height: 1.5,
             fontWeight: FontWeight.w400,
             fontSize: 17,
             color: primaryColor,
+            height: 1.5,
           ),
         ),
+        h6: const TextStyle(
+          fontFamily: "isepMisbah",
+          fontWeight: FontWeight.w400,
+          fontSize: 22,
+          height: 2,
+          color: primaryColor,
+        ),
+        h6Align: WrapAlignment.end,
         a: GoogleFonts.inter(
           textStyle: const TextStyle(
             fontWeight: FontWeight.w800,

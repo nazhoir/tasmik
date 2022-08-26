@@ -58,14 +58,16 @@ class RreadingPreferencesState extends State<ReadingPreferences> {
                           arabfontSize = value.toInt();
                         });
                       },
-                      min: 12.0,
-                      max: 40.0,
+                      min: 18.0,
+                      max: 35.0,
                     ),
                     Align(
                       alignment: Alignment.center,
                       child: Text(
                         "ِبِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيْم",
-                        style: TextStyle(fontSize: arabfontSize.toDouble()),
+                        style: TextStyle(
+                            fontSize: arabfontSize.toDouble(),
+                            fontFamily: "isepMisbah"),
                       ),
                     )
                   ],
@@ -97,7 +99,11 @@ class RreadingPreferencesState extends State<ReadingPreferences> {
                       alignment: Alignment.center,
                       child: Text(
                         "Bimisllahirrahminirrahim",
-                        style: TextStyle(fontSize: latinfontSize.toDouble()),
+                        style: GoogleFonts.inter(
+                          textStyle: TextStyle(
+                            fontSize: latinfontSize.toDouble(),
+                          ),
+                        ),
                       ),
                     )
                   ],

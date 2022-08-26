@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tasmik/constant.dart';
 import 'package:tasmik/settings/reading_preferences.dart';
 
 class Settings extends StatefulWidget {
@@ -30,71 +31,84 @@ class _SettingsState extends State<Settings> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(24.0),
-          height: MediaQuery.of(context).size.height,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CardSettings(
-                settingName: "Mode Gelap",
-                onTap: () {},
-                icon: CupertinoIcons.moon,
-              ),
-              CardSettings(
-                settingName: "Preferensi Membaca",
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ReadingPreferences(),
-                    ),
-                  );
-                },
-                icon: CupertinoIcons.textformat_alt,
-              ),
-              Container(
-                margin: const EdgeInsets.symmetric(vertical: 20),
-                child: const Divider(
-                  height: 5,
-                  color: Color.fromRGBO(17, 58, 77, 1),
+      body: Stack(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(24.0),
+            // height: MediaQuery.of(context).size.height - 90,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CardSettings(
+                  settingName: "Mode Gelap",
+                  onTap: () {},
+                  icon: CupertinoIcons.moon,
                 ),
-              ),
-              const Text(
-                "Tentang Aplikasi",
-                style: TextStyle(
-                  color: Color.fromRGBO(17, 58, 77, 1),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
+                CardSettings(
+                  settingName: "Preferensi Membaca",
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ReadingPreferences(),
+                      ),
+                    );
+                  },
+                  icon: CupertinoIcons.textformat_alt,
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              CardSettings(
-                settingName: "Periksa Pembaharuan",
-                onTap: () {},
-                icon: CupertinoIcons.arrow_2_circlepath,
-              ),
-              CardSettings(
-                settingName: "Bagikan Aplikasi",
-                onTap: () {},
-                icon: CupertinoIcons.link,
-              ),
-              CardSettings(
-                settingName: "Pertanyaan Umum",
-                onTap: () {},
-                icon: CupertinoIcons.question_circle,
-              ),
-              const Spacer(),
-              const Align(
-                alignment: Alignment.bottomCenter,
-                child: Text("Versi Beta 1.0"),
-              ),
-            ],
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 20),
+                  child: const Divider(
+                    height: 5,
+                    color: Color.fromRGBO(17, 58, 77, 1),
+                  ),
+                ),
+                const Text(
+                  "Tentang Aplikasi",
+                  style: TextStyle(
+                    color: Color.fromRGBO(17, 58, 77, 1),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CardSettings(
+                  settingName: "Periksa Pembaharuan",
+                  onTap: () {},
+                  icon: CupertinoIcons.arrow_2_circlepath,
+                ),
+                CardSettings(
+                  settingName: "Bagikan Aplikasi",
+                  onTap: () {},
+                  icon: CupertinoIcons.link,
+                ),
+                CardSettings(
+                  settingName: "Pertanyaan Umum",
+                  onTap: () {},
+                  icon: CupertinoIcons.question_circle,
+                ),
+              ],
+            ),
           ),
-        ),
+          const Spacer(),
+          const SafeArea(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: SizedBox(
+                height: 50,
+                child: Text(
+                  "Versi Beta 1.0 \n © Tasmik 2022 ",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: secondaryColor,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -120,8 +134,7 @@ class CardSettings extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 13),
         margin: const EdgeInsets.symmetric(vertical: 5),
         decoration: BoxDecoration(
-            color: const Color.fromRGBO(77, 121, 136, 1),
-            borderRadius: BorderRadius.circular(10)),
+            color: primaryColor, borderRadius: BorderRadius.circular(10)),
         child: Row(
           children: [
             Icon(

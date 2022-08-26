@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tasmik/settings/settings_view.dart';
 
 import '../app/awaliyah/awaliyah.dart';
 import '../app/ula/ula.dart';
@@ -25,7 +26,16 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppbarCustom(button: [
-        AppbarButton(icon: CupertinoIcons.text_alignright, onTap: () {})
+        AppbarButton(
+            icon: CupertinoIcons.text_alignright,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Settings(),
+                ),
+              );
+            })
       ]),
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (overscroll) {
