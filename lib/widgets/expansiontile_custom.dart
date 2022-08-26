@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tasmik/widgets/content_detail.dart';
 
 class ExpansionTileCustom extends StatelessWidget {
   const ExpansionTileCustom({
@@ -35,7 +36,7 @@ class ExpansionTileCustom extends StatelessWidget {
           style: GoogleFonts.inter(
             textStyle: const TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 22,
+              fontSize: 18,
               color: Colors.white,
             ),
           ),
@@ -48,17 +49,32 @@ class ExpansionTileCustom extends StatelessWidget {
 
 class ExpansionTileContent extends StatelessWidget {
   const ExpansionTileContent(
-      {Key? key, required this.no, required this.title, this.onTap})
+      {Key? key,
+      required this.no,
+      required this.title,
+      this.onTap,
+      this.level,
+      this.data})
       : super(key: key);
 
   final String no;
   final String title;
+  final String? level;
+  final String? data;
   final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ContentDetail(
+                level: level.toString(), title: title, data: data.toString()),
+          ),
+        );
+      },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 5),
         child: Row(

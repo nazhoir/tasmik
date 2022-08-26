@@ -1,19 +1,19 @@
-class IbtidaiyyahModel {
+class UlyaModel {
   final String level;
   final String title;
   final String conten;
 
-  IbtidaiyyahModel({
+  UlyaModel({
     required this.conten,
     required this.level,
     required this.title,
   });
 }
 
-var ibtidaiyyahList = [
-  IbtidaiyyahModel(
-    level: "Ibtidaiyyah",
-    title: "Ibtidaiyyah",
+var ulyaList = [
+  UlyaModel(
+    level: "Ulya",
+    title: "Waqaf, Ibtida' dan Bacaan khusus didalam al-Qur'an",
     conten: '''
 
 # [Welcome to StackEdit!](https://youtube.com)

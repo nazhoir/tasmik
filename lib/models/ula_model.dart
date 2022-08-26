@@ -1,19 +1,19 @@
-class IbtidaiyyahModel {
+class UlaModel {
   final String level;
   final String title;
   final String conten;
 
-  IbtidaiyyahModel({
+  UlaModel({
     required this.conten,
     required this.level,
     required this.title,
   });
 }
 
-var ibtidaiyyahList = [
-  IbtidaiyyahModel(
-    level: "Ibtidaiyyah",
-    title: "Ibtidaiyyah",
+var ulaList = [
+  UlaModel(
+    level: "Ula",
+    title: "Nun Mati & Tanwin, Mim Mati dan Hukum Mad",
     conten: '''
 
 # [Welcome to StackEdit!](https://youtube.com)

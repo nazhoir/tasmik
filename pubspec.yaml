@@ -18,7 +18,11 @@ dependencies:
   google_fonts: ^3.0.1
   flutter_native_splash: ^2.2.8
   flutter_markdown: ^0.6.10+4
+  
   url_launcher: ^6.1.5
+
+  
+  
 
 
 dev_dependencies:

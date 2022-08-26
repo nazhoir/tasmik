@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tasmik/constant.dart';
-import 'package:tasmik/home.dart';
+import '../constant.dart';
+import '../home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -12,7 +12,9 @@ class AppbarCustom extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
         toolbarHeight: 70,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Color.fromRGBO(17, 58, 77, 1)),
+        iconTheme: const IconThemeData(
+          color: Color.fromRGBO(17, 58, 77, 1),
+        ),
         backgroundColor: Colors.white,
         centerTitle: centerTitle ?? false,
         title: Image.asset(

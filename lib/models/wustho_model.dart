@@ -1,19 +1,19 @@
-class IbtidaiyyahModel {
+class WusthoModel {
   final String level;
   final String title;
   final String conten;
 
-  IbtidaiyyahModel({
+  WusthoModel({
     required this.conten,
     required this.level,
     required this.title,
   });
 }
 
-var ibtidaiyyahList = [
-  IbtidaiyyahModel(
-    level: "Ibtidaiyyah",
-    title: "Ibtidaiyyah",
+var wusthoList = [
+  WusthoModel(
+    level: "Wustho",
+    title: "Cara Baca, Alif Lam Ta'rif dan Idgham",
     conten: '''
 
 # [Welcome to StackEdit!](https://youtube.com)
