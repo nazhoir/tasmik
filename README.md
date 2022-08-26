@@ -1,4 +1,4 @@
-[Logo Tasmik](https://raw.githubusercontent.com/nazhoir/tasmik/master/images/tasmiklogo.png)
+![Logo Tasmik](https://raw.githubusercontent.com/nazhoir/tasmik/master/images/tasmiklogo.png)
 
 
 # About Tasmik
