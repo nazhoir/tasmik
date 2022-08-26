@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tasmik/app/ibtidaiyyah/ibtidaiyyah.dart';
 import 'package:tasmik/settings/settings_view.dart';
 
 import '../app/awaliyah/awaliyah.dart';
@@ -10,8 +11,6 @@ import '../widgets/appbar_custom.dart';
 import '../widgets/content_detail.dart';
 import '../widgets/level_card.dart';
 
-import '../models/ibtidaiyyah_model.dart';
-
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -20,8 +19,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final IbtidaiyyahModel ibtidaiyyah = ibtidaiyyahList[0];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,13 +51,10 @@ class _HomeState extends State<Home> {
 
                 //
                 LevelCard(
-                    level: ibtidaiyyah.level,
-                    title: ibtidaiyyah.title,
-                    destination: ContentDetail(
-                      level: ibtidaiyyah.level,
-                      title: ibtidaiyyah.title,
-                      data: ibtidaiyyah.conten,
-                    )),
+                  level: ibtidaiyyah.level.toString(),
+                  title: ibtidaiyyah.title.toString(),
+                  destination: const Ibtidaiyyah(),
+                ),
                 const LevelCard(
                   level: "Awwaliyah",
                   title: "Huruf Hijaiyyah, Makharijul Huruf dan Sifatul huruf",

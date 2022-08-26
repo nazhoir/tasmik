@@ -158,12 +158,12 @@ class ContentMark extends StatelessWidget {
   Widget build(BuildContext context) {
     return MarkdownBody(
       data: data,
-      shrinkWrap: true,
-      selectable: true,
       styleSheet: MarkdownStyleSheet(
         blockSpacing: 20,
         textAlign: WrapAlignment.spaceBetween,
         tableHeadAlign: TextAlign.center,
+        tableCellsPadding:
+            const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         tableBorder: TableBorder(
           left: const BorderSide(color: primaryColor),
           top: const BorderSide(color: primaryColor),
@@ -176,16 +176,15 @@ class ContentMark extends StatelessWidget {
         tableHead: GoogleFonts.inter(
           textStyle: const TextStyle(
             fontWeight: FontWeight.w600,
-            fontSize: 17,
+            fontSize: 15,
             color: primaryColor,
           ),
         ),
-        tableBody: GoogleFonts.inter(
-          textStyle: const TextStyle(
-            fontWeight: FontWeight.w400,
-            fontSize: 17,
-            color: primaryColor,
-          ),
+        tableBody: const TextStyle(
+          fontFamily: "isepMisbah",
+          fontWeight: FontWeight.w400,
+          fontSize: 20,
+          color: primaryColor,
         ),
         h1: GoogleFonts.inter(
           textStyle: const TextStyle(
