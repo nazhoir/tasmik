@@ -7,7 +7,7 @@ Tasmik is an application that contains learning materials.
 
 
 
-|  NO |    NAME   |   LEVEL   |
-|-----|-----------|-----------|
-|1    | Tajwid    | All Level |
+|  NO  |              NAME              |           LEVEL           |
+|------|--------------------------------|---------------------------|
+|  01  | Tajwid                         | All Level                 |
 
