@@ -23,10 +23,7 @@ var awwaliyahList = [
   AwwaliyahModel(
     title: "Pengenalan Huruf Hijaiiyah",
     conten: '''
-Markdown.[^1]
 
-
-[^1]: kakkkkk
 ### Tabel Huruf Hijaiyyah
 
 |      NO      |        HURUF HIJAIYYAH        |        LATIN           |
