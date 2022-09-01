@@ -19,6 +19,7 @@ class Heading extends StatelessWidget {
     this.cardTextColor,
     this.cardIcon,
     this.titleSize,
+    this.titleAlign,
   }) : super(key: key);
   final String? level;
   final String? subtitle;
@@ -27,7 +28,9 @@ class Heading extends StatelessWidget {
   final EdgeInsets? margin;
   final EdgeInsets? padding;
   final Color? cardTextColor;
+
   final double? titleSize;
+  final TextAlign? titleAlign;
   final bool? cardIcon;
   final Decoration? cardDecoration;
 
@@ -87,6 +90,7 @@ class Heading extends StatelessWidget {
             width: MediaQuery.of(context).size.width - 30,
             child: Text(
               title,
+              textAlign: titleAlign ?? TextAlign.start,
               style: GoogleFonts.inter(
                 textStyle: TextStyle(
                   fontWeight: FontWeight.w600,
@@ -214,13 +218,11 @@ class ContentMark extends StatelessWidget {
             color: primaryColor,
           ),
         ),
-        p: GoogleFonts.inter(
-          textStyle: const TextStyle(
-            fontWeight: FontWeight.w400,
-            fontSize: 17,
-            color: primaryColor,
-            height: 1.5,
-          ),
+        p: const TextStyle(
+          fontFamily: "isepMisbah",
+          fontWeight: FontWeight.w400,
+          fontSize: 20,
+          color: primaryColor,
         ),
         h6: const TextStyle(
           fontFamily: "isepMisbah",

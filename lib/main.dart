@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tasmik/landing.dart';
 import '../constant.dart';
 import '../home.dart';
 
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: aksen2Color,
       ),
       title: 'Tasmik',
-      home: const Home(),
+      home: const Landing(),
     );
   }
 }

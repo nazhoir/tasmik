@@ -21,6 +21,7 @@ dependencies:
   
   url_launcher: ^6.1.5
   flutter_launcher_icons: ^0.10.0
+  carousel_slider: ^4.1.1
 
   
   
@@ -56,6 +57,7 @@ flutter:
   uses-material-design: true
   assets:
     - images/
+    - images/materi/
   fonts:
     - family : isepMisbah
       fonts :

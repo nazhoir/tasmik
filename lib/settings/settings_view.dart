@@ -4,14 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tasmik/constant.dart';
 import 'package:tasmik/settings/reading_preferences.dart';
 
-class Settings extends StatefulWidget {
+class Settings extends StatelessWidget {
   const Settings({Key? key}) : super(key: key);
 
-  @override
-  State<Settings> createState() => _SettingsState();
-}
-
-class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +39,9 @@ class _SettingsState extends State<Settings> {
                   onTap: () {},
                   icon: CupertinoIcons.moon,
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
                 CardSettings(
                   settingName: "Preferensi Membaca",
                   onTap: () {
@@ -55,6 +53,9 @@ class _SettingsState extends State<Settings> {
                     );
                   },
                   icon: CupertinoIcons.textformat_alt,
+                ),
+                const SizedBox(
+                  height: 10,
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 20),
@@ -79,10 +80,16 @@ class _SettingsState extends State<Settings> {
                   onTap: () {},
                   icon: CupertinoIcons.arrow_2_circlepath,
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
                 CardSettings(
                   settingName: "Bagikan Aplikasi",
                   onTap: () {},
                   icon: CupertinoIcons.link,
+                ),
+                const SizedBox(
+                  height: 10,
                 ),
                 CardSettings(
                   settingName: "Pertanyaan Umum",
@@ -93,17 +100,15 @@ class _SettingsState extends State<Settings> {
             ),
           ),
           const Spacer(),
-          const SafeArea(
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: SizedBox(
-                height: 50,
-                child: Text(
-                  "Versi Beta 1.0 \n © Tasmik 2022 ",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: secondaryColor,
-                  ),
+          const Align(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+              height: 50,
+              child: Text(
+                "Versi Beta 1.0 \n © Tasmik 2022 ",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: secondaryColor,
                 ),
               ),
             ),
@@ -128,37 +133,100 @@ class CardSettings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 13),
-        margin: const EdgeInsets.symmetric(vertical: 5),
-        decoration: BoxDecoration(
-            color: primaryColor, borderRadius: BorderRadius.circular(10)),
-        child: Row(
-          children: [
-            Icon(
-              icon,
-              color: Colors.white,
-            ),
-            const SizedBox(
-              width: 15,
-            ),
-            Text(
-              settingName,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const Spacer(),
-            const Icon(
-              CupertinoIcons.right_chevron,
-              color: Colors.white,
-            ),
-          ],
+    return ElevatedButton(
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          const EdgeInsets.symmetric(vertical: 16, horizontal: 13),
         ),
+        backgroundColor: MaterialStateProperty.all<Color>(
+          primaryColor,
+        ),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      ),
+      onPressed: onTap,
+      child: Row(
+        children: [
+          Icon(
+            icon,
+            color: Colors.white,
+          ),
+          const SizedBox(
+            width: 15,
+          ),
+          Text(
+            settingName,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const Spacer(),
+          const Icon(
+            CupertinoIcons.right_chevron,
+            color: Colors.white,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Buttons extends StatelessWidget {
+  const Buttons(
+      {Key? key,
+      required this.settingName,
+      required this.onTap,
+      required this.icon})
+      : super(key: key);
+
+  final String settingName;
+  final VoidCallback onTap;
+  final IconData icon;
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          const EdgeInsets.symmetric(vertical: 16, horizontal: 13),
+        ),
+        backgroundColor: MaterialStateProperty.all<Color>(
+          primaryColor,
+        ),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      ),
+      onPressed: onTap,
+      child: Row(
+        children: [
+          Icon(
+            icon,
+            color: Colors.white,
+          ),
+          const SizedBox(
+            width: 15,
+          ),
+          Text(
+            settingName,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const Spacer(),
+          const Icon(
+            CupertinoIcons.right_chevron,
+            color: Colors.white,
+          ),
+        ],
       ),
     );
   }

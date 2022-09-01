@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/content_detail.dart';
-import '../../widgets/expansiontile_custom.dart';
-import '../../models/awwaliyah_model.dart';
+import '../../../widgets/content_detail.dart';
+import '../../../widgets/expansiontile_custom.dart';
+import '../../../models/tajwid/awwaliyah_model.dart';
 
 class Awaliyah extends StatefulWidget {
   const Awaliyah({Key? key}) : super(key: key);

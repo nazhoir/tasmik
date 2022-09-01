@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../widgets/exam_card.dart';
+import '../../../widgets/exam_card.dart';
 
 class ExamIbtidaiyyah extends StatefulWidget {
   const ExamIbtidaiyyah({Key? key}) : super(key: key);

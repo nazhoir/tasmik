@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tasmik/widgets/expansiontile_custom.dart';
-import '../../models/ibtidaiyyah_model.dart';
-import '../../widgets/content_detail.dart';
+import '../../../models/tajwid/ibtidaiyyah_model.dart';
+import '../../../widgets/content_detail.dart';
 
 class Ibtidaiyyah extends StatefulWidget {
   const Ibtidaiyyah({Key? key}) : super(key: key);

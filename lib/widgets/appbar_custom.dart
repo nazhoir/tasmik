@@ -29,19 +29,29 @@ class AppbarCustom extends StatelessWidget with PreferredSizeWidget {
 }
 
 class AppbarButton extends StatelessWidget {
-  const AppbarButton({Key? key, required this.icon, required this.onTap})
+  const AppbarButton(
+      {Key? key,
+      required this.icon,
+      required this.onTap,
+      this.padding,
+      this.size})
       : super(key: key);
 
   final IconData icon;
   final VoidCallback onTap;
+  final EdgeInsets? padding;
+  final double? size;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.only(right: 15),
-        child: Icon(icon),
+        padding: padding ?? const EdgeInsets.only(right: 15),
+        child: Icon(
+          icon,
+          size: size,
+        ),
       ),
     );
   }
