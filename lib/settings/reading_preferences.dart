@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:tasmik/settings/data/font_size.dart';
 
 class ReadingPreferences extends StatefulWidget {
   const ReadingPreferences({Key? key}) : super(key: key);
 
   @override
-  State<ReadingPreferences> createState() => RreadingPreferencesState();
+  State<ReadingPreferences> createState() => ReadingPreferencesState();
 }
 
-class RreadingPreferencesState extends State<ReadingPreferences> {
+class ReadingPreferencesState extends State<ReadingPreferences> {
   int arabfontSize = 25;
   int latinfontSize = 17;
+
   @override
   Widget build(BuildContext context) {
+    var ui = Provider.of<LTRSize>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70,
@@ -52,10 +56,10 @@ class RreadingPreferencesState extends State<ReadingPreferences> {
                   children: [
                     const Text("Ukuran Teks Arab"),
                     Slider(
-                      value: arabfontSize.toDouble(),
-                      onChanged: (value) {
+                      value: ui.sliderrtlFontSize,
+                      onChanged: (neValue) {
                         setState(() {
-                          arabfontSize = value.toInt();
+                          ui.rtlFontSize = neValue;
                         });
                       },
                       min: 18.0,
@@ -66,8 +70,9 @@ class RreadingPreferencesState extends State<ReadingPreferences> {
                       child: Text(
                         "ِبِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيْم",
                         style: TextStyle(
-                            fontSize: arabfontSize.toDouble(),
-                            fontFamily: "isepMisbah"),
+                          fontSize: ui.rtlFontSize,
+                          fontFamily: "isepMisbah",
+                        ),
                       ),
                     )
                   ],
@@ -86,13 +91,13 @@ class RreadingPreferencesState extends State<ReadingPreferences> {
                   children: [
                     const Text("Ukuran Teks Latin"),
                     Slider(
-                      value: latinfontSize.toDouble(),
-                      onChanged: (value) {
+                      value: ui.sliderltrFontSize,
+                      onChanged: (newValue) {
                         setState(() {
-                          latinfontSize = value.toInt();
+                          ui.ltrFontSize = newValue;
                         });
                       },
-                      min: 12.0,
+                      min: 0.5,
                       max: 40.0,
                     ),
                     Align(
@@ -101,7 +106,7 @@ class RreadingPreferencesState extends State<ReadingPreferences> {
                         "Bimisllahirrahminirrahim",
                         style: GoogleFonts.inter(
                           textStyle: TextStyle(
-                            fontSize: latinfontSize.toDouble(),
+                            fontSize: ui.ltrFontSize,
                           ),
                         ),
                       ),

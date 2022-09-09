@@ -300,7 +300,7 @@ class CardVideo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
               height: 130,
               child: ClipRRect(
                 borderRadius:

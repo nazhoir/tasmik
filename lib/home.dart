@@ -5,7 +5,6 @@ import 'package:tasmik/app/fiqih/fiqh_view.dart';
 import 'package:tasmik/app/tajwid/tajwid_view.dart';
 import 'package:tasmik/constant.dart';
 
-import 'package:tasmik/settings/settings_view.dart';
 import 'package:tasmik/widgets/blog_list.dart';
 import 'package:tasmik/widgets/card_blog.dart';
 import 'package:tasmik/widgets/carousel_custom.dart';
@@ -106,22 +105,22 @@ class _HomeState extends State<Home> {
             ),
             SliverToBoxAdapter(
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.transparent,
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(20),
                   ),
                 ),
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: aksen2Color,
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(20),
                     ),
                   ),
                   child: Column(
-                    children: [
-                      const CarouselCourse(
+                    children: const [
+                      CarouselCourse(
                         title: "Rekomendasi",
                         detail: TajwidView(),
                         items: [
@@ -148,7 +147,7 @@ class _HomeState extends State<Home> {
                           ),
                         ],
                       ),
-                      const BlogList(
+                      BlogList(
                         title: "Artikel Populer",
                         items: [
                           CardBlog(
@@ -158,7 +157,7 @@ class _HomeState extends State<Home> {
                           ),
                         ],
                       ),
-                      const CarouselBlog(
+                      CarouselBlog(
                         title: "Blog",
                         detail: TajwidView(),
                         items: [
@@ -185,7 +184,7 @@ class _HomeState extends State<Home> {
                           ),
                         ],
                       ),
-                      const BlogList(
+                      BlogList(
                         title: "Keislaman",
                         items: [
                           CardBlog(
@@ -210,7 +209,7 @@ class _HomeState extends State<Home> {
                           ),
                         ],
                       ),
-                      const CarouselVideo(
+                      CarouselVideo(
                         title: "Video",
                         detail: TajwidView(),
                         items: [

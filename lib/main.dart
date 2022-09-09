@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tasmik/landing.dart';
+import 'package:tasmik/settings/data/font_size.dart';
 import '../constant.dart';
-import '../home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await initialization(null);
 
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_) => LTRSize()),
+    ], child: const MyApp()),
+  );
 }
 
 Future initialization(BuildContext? context) async {

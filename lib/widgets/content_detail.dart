@@ -2,9 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:tasmik/settings/reading_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../constant.dart';
+import '../settings/data/font_size.dart';
+import '../settings/settings_view.dart';
 import 'appbar_custom.dart';
 
 class Heading extends StatelessWidget {
@@ -122,7 +126,14 @@ class Content extends StatelessWidget {
         button: [
           AppbarButton(
             icon: CupertinoIcons.textformat_alt,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ReadingPreferences(),
+                ),
+              );
+            },
           ),
         ],
       ),
@@ -145,8 +156,15 @@ class Content extends StatelessWidget {
   }
 }
 
-class ContentMark extends StatelessWidget {
+class ContentMark extends StatefulWidget {
   const ContentMark({Key? key, required this.data}) : super(key: key);
+  final String data;
+
+  @override
+  State<ContentMark> createState() => _ContentMarkState();
+}
+
+class _ContentMarkState extends State<ContentMark> {
   Future<void> _launcUrl(dynamic url) async {
     final Uri uri = Uri.parse(url);
     if (!await launchUrl(
@@ -157,11 +175,11 @@ class ContentMark extends StatelessWidget {
     }
   }
 
-  final String data;
   @override
   Widget build(BuildContext context) {
+    var ui = Provider.of<LTRSize>(context, listen: true);
     return MarkdownBody(
-      data: data,
+      data: widget.data,
       styleSheet: MarkdownStyleSheet(
         blockSpacing: 20,
         textAlign: WrapAlignment.spaceBetween,
@@ -184,10 +202,10 @@ class ContentMark extends StatelessWidget {
             color: primaryColor,
           ),
         ),
-        tableBody: const TextStyle(
+        tableBody: TextStyle(
           fontFamily: "isepMisbah",
           fontWeight: FontWeight.w400,
-          fontSize: 20,
+          fontSize: ui.rtlFontSize.toDouble(),
           color: primaryColor,
         ),
         h1: GoogleFonts.inter(
@@ -218,16 +236,16 @@ class ContentMark extends StatelessWidget {
             color: primaryColor,
           ),
         ),
-        p: const TextStyle(
+        p: TextStyle(
           fontFamily: "isepMisbah",
           fontWeight: FontWeight.w400,
-          fontSize: 20,
+          fontSize: ui.ltrFontSize.toDouble(),
           color: primaryColor,
         ),
-        h6: const TextStyle(
+        h6: TextStyle(
           fontFamily: "isepMisbah",
           fontWeight: FontWeight.w400,
-          fontSize: 22,
+          fontSize: ui.rtlFontSize.toDouble(),
           height: 2,
           color: primaryColor,
         ),

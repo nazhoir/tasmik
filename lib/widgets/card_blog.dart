@@ -43,7 +43,7 @@ class CardBlog extends StatelessWidget {
                     ),
                     child: Text(
                       category.toString(),
-                      style: TextStyle(color: aksen2Color),
+                      style: const TextStyle(color: aksen2Color),
                     ),
                   ),
                 Text(
