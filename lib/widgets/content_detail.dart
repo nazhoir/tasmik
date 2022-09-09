@@ -8,7 +8,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../constant.dart';
 import '../settings/data/font_size.dart';
-import '../settings/settings_view.dart';
 import 'appbar_custom.dart';
 
 class Heading extends StatelessWidget {
