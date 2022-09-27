@@ -14,7 +14,7 @@ class Heading extends StatelessWidget {
   const Heading({
     Key? key,
     this.level,
-    required this.title,
+    this.title,
     this.subtitle,
     this.margin,
     this.padding,
@@ -26,7 +26,7 @@ class Heading extends StatelessWidget {
   }) : super(key: key);
   final String? level;
   final String? subtitle;
-  final String title;
+  final String? title;
 
   final EdgeInsets? margin;
   final EdgeInsets? padding;
@@ -89,20 +89,21 @@ class Heading extends StatelessWidget {
                 ),
             ],
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width - 30,
-            child: Text(
-              title,
-              textAlign: titleAlign ?? TextAlign.start,
-              style: GoogleFonts.inter(
-                textStyle: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: titleSize ?? 28,
-                  color: cardTextColor ?? primaryColor,
+          if (title != null)
+            SizedBox(
+              width: MediaQuery.of(context).size.width - 30,
+              child: Text(
+                title.toString(),
+                textAlign: titleAlign ?? TextAlign.start,
+                style: GoogleFonts.inter(
+                  textStyle: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: titleSize ?? 28,
+                    color: cardTextColor ?? primaryColor,
+                  ),
                 ),
               ),
             ),
-          ),
         ],
       ),
     );

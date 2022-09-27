@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:tasmik/app/fiqih/fiqh_view.dart';
 import 'package:tasmik/app/tajwid/tajwid_view.dart';
@@ -8,6 +9,7 @@ import 'package:tasmik/constant.dart';
 import 'package:tasmik/widgets/blog_list.dart';
 import 'package:tasmik/widgets/card_blog.dart';
 import 'package:tasmik/widgets/carousel_custom.dart';
+import 'package:tasmik/widgets/content_detail.dart';
 import 'package:tasmik/widgets/materi_card.dart';
 
 import '../widgets/appbar_custom.dart';
@@ -25,19 +27,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppbarCustom(button: [
-      //   AppbarButton(
-      //       icon: CupertinoIcons.square_grid_2x2,
-      //       onTap: () {
-      //         Navigator.push(
-      //           context,
-      //           MaterialPageRoute(
-      //             builder: (context) => const Settings(),
-      //           ),
-      //         );
-      //       })
-      // ]),
-      // backgroundColor: Colors.transparent,
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (overscroll) {
           overscroll.disallowIndicator();
@@ -46,33 +35,65 @@ class _HomeState extends State<Home> {
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
-              // stretch: true,
-              floating: true,
               pinned: true,
-
-              // snap: true,
-
               backgroundColor: primaryColor,
-              // collapsedHeight: 90,
               toolbarHeight: 90,
               expandedHeight: (MediaQuery.of(context).size.height / 2) -
                   kBottomNavigationBarHeight,
-
               flexibleSpace: LayoutBuilder(
                 builder: (context, cons) {
                   top = cons.biggest.height;
                   return FlexibleSpaceBar(
                     collapseMode: CollapseMode.parallax,
                     titlePadding: EdgeInsets.zero,
-                    background: Container(
-                        color: primaryColor,
-                        // ,
-                        child: Image.asset(
-                          "images/materi/quran.jpg",
-                          fit: BoxFit.cover,
-                          width: 1000,
-                          height: 1000,
-                        )),
+                    background: Center(
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width - 70,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Text(
+                              "ِبِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيْم",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: "isepMisbah",
+                                fontWeight: FontWeight.w800,
+                                color: aksen2Color,
+                                fontSize: 22,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            const Text(
+                              "فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: "isepMisbah",
+                                fontWeight: FontWeight.w400,
+                                color: aksen2Color,
+                                fontSize: 20,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              "Maka ni'mat Tuhan kamu yang manakah yang kamu dustakan?,\n",
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.inter(
+                                textStyle: const TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  color: aksen2Color,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                     title: AnimatedOpacity(
                       duration: const Duration(milliseconds: 200),
                       opacity: top <= 110 ? 1.0 : 0.0,
@@ -248,136 +269,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-
-
-
-
-
-
-
-// ListView(
-//           children: [
-           
-//             Container(
-//               height: MediaQuery.of(context).size.height / 2.4,
-//             ),
-//             const CarouselCourse(
-//               title: "Rekomendasi",
-//               detail: TajwidView(),
-//               items: [
-//                 CardMateri(
-//                   image: "images/materi/quran.jpg",
-//                   title: "Ilmu Tajwid",
-//                   totalLevel: "20",
-//                   destination: TajwidView(),
-//                   duration: "20 Jam",
-//                 ),
-//                 CardMateri(
-//                   image: "images/materi/prayer.jpg",
-//                   title: "Ilmu Fiqh",
-//                   totalLevel: "20",
-//                   destination: FiqhView(),
-//                   duration: "20 Jam",
-//                 ),
-//                 CardMateri(
-//                   image: "images/materi/tauhid.jpg",
-//                   title: "Ilmu Tauhid",
-//                   totalLevel: "20",
-//                   destination: TajwidView(),
-//                   duration: "20 Jam",
-//                 ),
-//               ],
-//             ),
-//             const BlogList(
-//               title: "Artikel Populer",
-//               items: [
-//                 CardBlog(
-//                   category: "Al Qur'an",
-//                   title:
-//                       "Ini judul blog Ini judul blog Ini judul blog Ini judul blog Ini judul blog ",
-//                 ),
-//               ],
-//             ),
-//             const CarouselBlog(
-//               title: "Blog",
-//               detail: TajwidView(),
-//               items: [
-//                 CardMateri(
-//                   image: "images/materi/quran.jpg",
-//                   title: "Ilmu Tajwid",
-//                   totalLevel: "20",
-//                   destination: TajwidView(),
-//                   duration: "20 Jam",
-//                 ),
-//                 CardMateri(
-//                   image: "images/materi/prayer.jpg",
-//                   title: "Ilmu Fiqh",
-//                   totalLevel: "20",
-//                   destination: FiqhView(),
-//                   duration: "20 Jam",
-//                 ),
-//                 CardMateri(
-//                   image: "images/materi/tauhid.jpg",
-//                   title: "Ilmu Tauhid",
-//                   totalLevel: "20",
-//                   destination: TajwidView(),
-//                   duration: "20 Jam",
-//                 ),
-//               ],
-//             ),
-//             const BlogList(
-//               title: "Keislaman",
-//               items: [
-//                 CardBlog(
-//                   title:
-//                       "Ini judul blog Ini judul blog Ini judul blog Ini judul blog Ini judul blog ",
-//                 ),
-//                 CardBlog(
-//                   title:
-//                       "Ini judul blog Ini judul blog Ini judul blog Ini judul blog Ini judul blog ",
-//                 ),
-//                 CardBlog(
-//                   title:
-//                       "Ini judul blog Ini judul blog Ini judul blog Ini judul blog Ini judul blog ",
-//                 ),
-//                 CardBlog(
-//                   title:
-//                       "Ini judul blog Ini judul blog Ini judul blog Ini judul blog Ini judul blog ",
-//                 ),
-//                 CardBlog(
-//                   title:
-//                       "Ini judul blog Ini judul blog Ini judul blog Ini judul blog Ini judul blog ",
-//                 ),
-//               ],
-//             ),
-//             const CarouselVideo(
-//               title: "Video",
-//               detail: TajwidView(),
-//               items: [
-//                 CardVideo(
-//                   image: "images/materi/quran.jpg",
-//                   title:
-//                       "Ilmu Tajwid Ilmu Tajwid Ilmu Tajwid Ilmu Tajwid Ilmu Tajwid",
-//                   category: "20",
-//                   destination: TajwidView(),
-//                   duration: "20 Jam",
-//                 ),
-//                 CardVideo(
-//                   image: "images/materi/prayer.jpg",
-//                   title: "Ilmu Fiqh",
-//                   category: "20",
-//                   destination: FiqhView(),
-//                   duration: "20 Jam",
-//                 ),
-//                 CardVideo(
-//                   image: "images/materi/tauhid.jpg",
-//                   title: "Ilmu Tauhid ",
-//                   category: "20",
-//                   destination: TajwidView(),
-//                   duration: "20 Jam",
-//                 ),
-//               ],
-//             ),
-//           ],
-//         )

@@ -60,7 +60,7 @@ class CarouselCourse extends StatelessWidget {
           options: CarouselOptions(
             viewportFraction: 0.8,
             enlargeCenterPage: true,
-            autoPlay: true,
+            autoPlay: false,
           ),
         ),
       ],
